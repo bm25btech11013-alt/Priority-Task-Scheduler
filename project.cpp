@@ -654,7 +654,7 @@ int main() {
     int choice;
 
     cout << "\n========================================\n";
-    cout << "       DEADLINE-BASED TASK SCHEDULER    \n";
+    cout << "       PRIORITY TASK SCHEDULER    \n";
     cout << "========================================\n";
 
     displayDashboard();
@@ -670,7 +670,7 @@ int main() {
         cout << "5.  Display All Tasks\n";
         cout << "6.  Search Task by ID\n";
         cout << "7.  Group Tasks by Deadline\n";
-        cout << "8.  Search Deadline using BST\n";
+        cout << "8.  Search Deadline\n";
         cout << "9.  Undo Submission by Task ID\n";
         cout << "10. Display Completed Tasks\n";
         cout << "11. Display Recent Completion History\n";
