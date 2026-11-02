@@ -10,7 +10,7 @@ Undo completed tasks before their deadlines.
 Delete pending tasks.
 View a dashboard showing total, pending, completed and overdue tasks.
 
-1.Min Heap — Task Scheduling
+1. Min Heap — Task Scheduling
 Concept: A Min Heap is a tree-based data structure that gives quick access to the element with the highest precedence according to its ordering.
 Our implementation: We use a Min Heap to select the next task based on three conditions:
 Earliest deadline comes first.
@@ -35,7 +35,7 @@ Concept: A Queue follows FIFO (First In, First Out), meaning the task that enter
 Our implementation: Newly added tasks are placed in the incoming queue. The scheduleTasks() function takes them one by one and transfers them to the Min Heap. This maintains the arrival order during the initial scheduling process.
 Time complexity: Enqueue – O(1) | Dequeue – O(1)
 
-5.Stack — Completion History
+5. Stack — Completion History
 Concept: A Stack follows LIFO (Last In, First Out), so the most recently inserted element is accessed first.
 Our implementation: Whenever a task is completed, its ID is pushed onto the stack. This allows us to display completion history starting with the latest completed task.
 Time complexity: Push – O(1) | Pop – O(1) | Top – O(1)
