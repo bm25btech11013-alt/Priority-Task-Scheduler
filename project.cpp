@@ -295,7 +295,6 @@ void addTask() {
     root = insertBST(root, t.deadline, t.id);
 
     cout << "\nTask added successfully!\n";
-    cout << "Task is waiting in incoming queue.\n";
 
     displayDashboard();
 }
@@ -304,13 +303,10 @@ void addTask() {
 void scheduleTasks() {
 
     if (incoming.empty()) {
-        cout << "\nNo incoming tasks to schedule!\n";
         return;
     }
 
     int count = 0;
-
-    cout << "\n--- SCHEDULING TASKS ---\n";
 
     while (!incoming.empty()) {
 
@@ -329,17 +325,8 @@ void scheduleTasks() {
         // Insert into Min Heap
         minHeap.push(taskTable[id]);
 
-        cout << "Scheduled: " << taskTable[id].name
-             << " | Deadline: " << taskTable[id].deadline
-             << "\n";
-
         count++;
     }
-
-    cout << "\n" << count
-         << " task(s) scheduled successfully!\n";
-
-    displayDashboard();
 }
 
 // Function to mark tasks as completed
