@@ -664,18 +664,17 @@ int main() {
         cout << "\n============== MAIN MENU ==============\n";
 
         cout << "1.  Add New Task\n";
-        cout << "2.  Schedule Incoming Tasks\n";
-        cout << "3.  Mark Task as Completed\n";
-        cout << "4.  Display Next Recommended Task\n";
-        cout << "5.  Display All Tasks\n";
-        cout << "6.  Search Task by ID\n";
-        cout << "7.  Group Tasks by Deadline\n";
-        cout << "8.  Search Deadline\n";
-        cout << "9.  Undo Submission by Task ID\n";
-        cout << "10. Display Completed Tasks\n";
-        cout << "11. Display Recent Completion History\n";
-        cout << "12. Delete Task\n";
-        cout << "13. Display Dashboard\n";
+        cout << "2.  Mark Task as Completed\n";
+        cout << "3.  Display Next Recommended Task\n";
+        cout << "4.  Display All Tasks\n";
+        cout << "5.  Search Task by ID\n";
+        cout << "6.  Group Tasks by Deadline\n";
+        cout << "7.  Search Deadline\n";
+        cout << "8.  Undo Submission by Task ID\n";
+        cout << "9. Display Completed Tasks\n";
+        cout << "10. Display Recent Completion History\n";
+        cout << "11. Delete Task\n";
+        cout << "12. Display Dashboard\n";
         cout << "0.  Exit\n";
 
         cout << "========================================\n";
@@ -687,53 +686,50 @@ int main() {
 
             case 1:
                 addTask();
-                break;
-
-            case 2:
                 scheduleTasks();
                 break;
 
-            case 3:
+            case 2:
                 markTaskCompleted();
                 break;
 
-            case 4:
+            case 3:
                 displayNextTask();
                 break;
 
-            case 5:
+            case 4:
                 displayAllTasks();
                 break;
 
-            case 6:
+            case 5:
                 searchTask();
                 break;
 
-            case 7:
+            case 6:
                 displayDeadlineGroups();
                 break;
 
-            case 8:
+            case 7:
                 searchDeadline();
                 break;
 
-            case 9:
+            case 8:
                 undoSubmission();
                 break;
 
-            case 10:
+            case 9:
                 displayCompleted();
                 break;
 
-            case 11:
+            case 10:
                 displayRecentCompletion();
                 break;
 
-            case 12:
+            case 11:
                 deleteTask();
                 break;
 
-            case 13:
+            case 12:
                 displayDashboard();
                 break;
 
