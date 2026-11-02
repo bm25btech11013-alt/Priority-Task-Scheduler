@@ -1,6 +1,7 @@
 The project uses different Data Structures and Algorithms (DSA) concepts to handle task scheduling, searching, task management and completion tracking.
 
 Features:
+
 Add tasks with unique IDs, names, deadlines and priorities.
 
 
