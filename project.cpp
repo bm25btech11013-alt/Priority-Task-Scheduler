@@ -2,10 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// ==========================================
-// 1. TASK STRUCTURE
-// ==========================================
-
+// Defining the task structure
 struct Task {
     int id;
     string name;
@@ -15,10 +12,7 @@ struct Task {
     string status;
 };
 
-// ==========================================
-// 2. DATE FUNCTIONS
-// ==========================================
-
+// Date function
 string getTodayDate() {
     time_t now = time(nullptr);
     tm* local = localtime(&now);
@@ -64,10 +58,7 @@ bool isValidDate(string date) {
     return day >= 1 && day <= days[month - 1];
 }
 
-// ==========================================
-// 3. MIN HEAP - PRIORITY QUEUE
-// ==========================================
-
+// 3. Min Heap - Priority Queue
 struct Compare {
     bool operator()(const Task& a, const Task& b) const {
 
@@ -84,10 +75,7 @@ struct Compare {
     }
 };
 
-// ==========================================
-// 4. BINARY SEARCH TREE
-// ==========================================
-
+// Binary Search Tree
 struct Node {
     string deadline;
     vector<int> taskIDs;
@@ -140,10 +128,6 @@ void deleteBST(Node* root) {
     delete root;
 }
 
-// ==========================================
-// 5. ALL DATA STRUCTURES
-// ==========================================
-
 // Priority Queue / Min Heap
 priority_queue<Task, vector<Task>, Compare> minHeap;
 
@@ -170,10 +154,7 @@ Node* root = nullptr;
 
 int arrivalCounter = 0;
 
-// ==========================================
-// 6. HELPER FUNCTIONS
-// ==========================================
-
+// Defining Helper functions
 void printTask(const Task& t) {
 
     cout << "\nTask ID   : " << t.id;
@@ -209,10 +190,7 @@ void cleanHeap() {
     }
 }
 
-// ==========================================
-// 7. DASHBOARD
-// ==========================================
-
+// Function to display dashboard
 void displayDashboard() {
 
     int total = 0;
@@ -259,10 +237,7 @@ void displayDashboard() {
     cout << "----------------------------------------\n";
 }
 
-// ==========================================
-// OPTION 1: ADD TASK
-// ==========================================
-
+// Function to add task
 void addTask() {
 
     Task t;
@@ -325,10 +300,7 @@ void addTask() {
     displayDashboard();
 }
 
-// ==========================================
-// OPTION 2: SCHEDULE INCOMING TASKS
-// ==========================================
-
+// Scheduling incoming tasks
 void scheduleTasks() {
 
     if (incoming.empty()) {
@@ -370,10 +342,7 @@ void scheduleTasks() {
     displayDashboard();
 }
 
-// ==========================================
-// OPTION 3: MARK TASK AS COMPLETED
-// ==========================================
-
+// Function to mark tasks as completed
 void markTaskCompleted() {
 
     int id;
@@ -415,10 +384,7 @@ void markTaskCompleted() {
     displayDashboard();
 }
 
-// ==========================================
-// OPTION 4: DISPLAY NEXT RECOMMENDED TASK
-// ==========================================
-
+// Function to display next recommended task
 void displayNextTask() {
 
     cleanHeap();
@@ -436,10 +402,7 @@ void displayNextTask() {
     printTask(t);
 }
 
-// ==========================================
-// OPTION 5: DISPLAY ALL TASKS
-// ==========================================
-
+// Function to display all tasks
 void displayAllTasks() {
 
     bool found = false;
@@ -459,10 +422,7 @@ void displayAllTasks() {
         cout << "No active tasks available!\n";
 }
 
-// ==========================================
-// OPTION 6: SEARCH TASK BY ID
-// ==========================================
-
+// Search task by ID
 void searchTask() {
 
     int id;
@@ -480,10 +440,7 @@ void searchTask() {
     printTask(taskTable.at(id));
 }
 
-// ==========================================
-// OPTION 7: GROUP TASKS BY DEADLINE
-// ==========================================
-
+// Group tasks by deadline
 void displayDeadlineGroups() {
 
     bool found = false;
@@ -527,10 +484,7 @@ void displayDeadlineGroups() {
         cout << "No active tasks available!\n";
 }
 
-// ==========================================
-// OPTION 8: SEARCH DEADLINE USING BST
-// ==========================================
-
+// Search deadline using BST
 void searchDeadline() {
 
     string date;
@@ -567,10 +521,7 @@ void searchDeadline() {
         cout << "No active tasks for this deadline!\n";
 }
 
-// ==========================================
-// OPTION 9: UNDO SUBMISSION
-// ==========================================
-
+// Function to undo submission
 void undoSubmission() {
 
     int id;
@@ -613,10 +564,7 @@ void undoSubmission() {
     displayDashboard();
 }
 
-// ==========================================
-// OPTION 10: DISPLAY COMPLETED TASKS
-// ==========================================
-
+// Function to display completed tasks
 void displayCompleted() {
 
     if (completedList.empty()) {
@@ -636,10 +584,7 @@ void displayCompleted() {
     }
 }
 
-// ==========================================
-// OPTION 11: DISPLAY RECENT COMPLETION HISTORY
-// ==========================================
-
+// Recent completion history
 void displayRecentCompletion() {
 
     if (completedStack.empty()) {
@@ -672,10 +617,7 @@ void displayRecentCompletion() {
         cout << "No currently completed tasks in history!\n";
 }
 
-// ==========================================
-// OPTION 12: DELETE TASK
-// ==========================================
-
+// Function to delete task
 void deleteTask() {
 
     int id;
@@ -700,23 +642,12 @@ void deleteTask() {
         return;
     }
 
-    // Lazy deletion
     t.status = "Deleted";
 
     cout << "\nTask deleted successfully!\n";
 
     displayDashboard();
 }
-
-// ==========================================
-// OPTION 13: DISPLAY DASHBOARD
-// ==========================================
-
-// Uses displayDashboard() defined earlier.
-
-// ==========================================
-// MAIN MENU
-// ==========================================
 
 int main() {
 
